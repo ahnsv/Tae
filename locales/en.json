@@ -2,12 +2,12 @@
   "links": {
     "home": "Home",
     "about": "About",
-    "english": "English version",
-    "korean": "Korean version"
+    "english": "English",
+    "korean": "Korean"
   },
   "home": {
-    "title": "Welcome",
-    "introduction": "This is an introduction in English."
+    "title": "Hi, I'm Sangtae Ahn. I go by Tae",
+    "introduction": "I am hugely interested in Web Technology in general. Check me out what I can do. (plz)"
   },
   "about": {
     "title": "About",

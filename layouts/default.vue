@@ -34,22 +34,22 @@ export default {};
 <style>
 @font-face {
   font-family: "Blanks Sans";
-  src: url('~assets/fonts/blank Sans/Web/blank Sans Bold.woff') format('woff');
-  src: local('BlankSansBold'),
-       url('~assets/fonts/blank Sans/Web/blank Sans Bold.eot') format('eot'),
-       url('~assets/fonts/blank Sans/TTF/blank Sans Bold.ttf') format('ttf'),
-       url('~assets/fonts/blank Sans/OTF/blank Sans OTF Bold.otf') format('otf'),
-       url('~assets/fonts/blank Sans/Web/blank Sans Bold.svg') format('svg');
+  src: url("~assets/fonts/blank Sans/Web/blank Sans Bold.woff") format("woff");
+  src: local("BlankSansBold"),
+    url("~assets/fonts/blank Sans/Web/blank Sans Bold.eot") format("eot"),
+    url("~assets/fonts/blank Sans/TTF/blank Sans Bold.ttf") format("ttf"),
+    url("~assets/fonts/blank Sans/OTF/blank Sans OTF Bold.otf") format("otf"),
+    url("~assets/fonts/blank Sans/Web/blank Sans Bold.svg") format("svg");
   font-weight: bold;
 }
 @font-face {
   font-family: "Blank Sans";
-  src: url('~assets/fonts/blank Sans/Web/blank Sans Book.woff') format('woff');
-  src: local('BlankSansBook'),
-       url('~assets/fonts/blank Sans/Web/blank Sans Book.eot') format('eot'),
-       url('~assets/fonts/blank Sans/TTF/blank Sans Book.ttf') format('ttf'),
-       url('~assets/fonts/blank Sans/OTF/blank Sans OTF Book.otf') format('otf'),
-       url('~assets/fonts/blank Sans/Web/blank Sans Book.svg') format('svg');
+  src: url("~assets/fonts/blank Sans/Web/blank Sans Book.woff") format("woff");
+  src: local("BlankSansBook"),
+    url("~assets/fonts/blank Sans/Web/blank Sans Book.eot") format("eot"),
+    url("~assets/fonts/blank Sans/TTF/blank Sans Book.ttf") format("ttf"),
+    url("~assets/fonts/blank Sans/OTF/blank Sans OTF Book.otf") format("otf"),
+    url("~assets/fonts/blank Sans/Web/blank Sans Book.svg") format("svg");
   font-weight: normal;
 }
 *,
@@ -106,14 +106,19 @@ body {
   background-color: #fff;
 }
 .nuxt-link-active {
-  color: cyan;
+  color: #9c27b0;
 }
 .Content {
-  padding: 50px 0;
   text-align: center;
+  height: calc(100vh - 85px);
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .Content__Title {
-  font-weight: 300;
+  font-weight: bold;
   padding-bottom: 30px;
 }
 </style>
