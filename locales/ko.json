@@ -1,0 +1,16 @@
+{
+  "links": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "english": "ENGLISH",
+    "korean": "한국어"
+  },
+  "home": {
+    "title": "안녕하세요",
+    "introduction": "웹 개발자를 꿈꾸는 안상태라고 합니다"
+  },
+  "about": {
+    "title": "안상태가 누구임?",
+    "introduction": "그러게요..."
+  }
+}
