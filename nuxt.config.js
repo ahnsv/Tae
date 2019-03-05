@@ -3,7 +3,6 @@ export default {
   router: {
     middleware: 'i18n'
   },
-  plugins: ['~/plugins/i18n.js'],
   generate: {
     routes: ['/', '/about', '/ko', '/ko/about']
   },
@@ -11,6 +10,7 @@ export default {
     'aos/dist/aos.css'
   ],
   plugins: [
-    '@/plugins/aos.js'
+    { src: "~/plugins/aos", ssr: false },
+    { src: '~/plugins/i18n.js'}
   ]
 }
