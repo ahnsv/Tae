@@ -13,7 +13,7 @@
           data-aos-delay="500"
         >{{ $t('about.introduction--content') }}</p>
       </div>
-      <div class="divider"></div>
+      <div class="divider" data-aos="fade"></div>
     </div>
   </div>
 </template>
@@ -51,6 +51,7 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 
 .container > p.Content__Intro, #content-intro {

@@ -133,7 +133,6 @@ body {
 }
 .Content {
   text-align: center;
-  height: calc(100vh - 85px);
   display: flex;
   width: 100%;
   flex-direction: row;
