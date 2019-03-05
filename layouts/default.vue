@@ -2,23 +2,35 @@
   <div>
     <header class="Header">
       <div class="container">
-        <h1 class="Header__Title">AST Log</h1>
+        <h1 class="Header__Title blank-theme">AST Log</h1>
         <nav class="Header__Menu">
-          <NuxtLink :to="$i18n.path('')" class="Header__Link" exact data-aos-anchor=".anchor">{{ $t('links.home') }}</NuxtLink>
-          <NuxtLink :to="$i18n.path('about')" class="Header__Link" exact data-aos-anchor=".anchor">{{ $t('links.about') }}</NuxtLink>
+          <NuxtLink
+            :to="$i18n.path('')"
+            class="Header__Link blank-theme"
+            exact
+            data-aos-anchor=".anchor"
+          >{{ $t('links.home') }}</NuxtLink>
+          <NuxtLink
+            :to="$i18n.path('about')"
+            class="Header__Link blank-theme"
+            exact
+            data-aos-anchor=".anchor"
+          >{{ $t('links.about') }}</NuxtLink>
           <NuxtLink
             v-if="$i18n.locale === 'en'"
             :to="`/ko` + $route.fullPath"
-            class="Header__Link"
+            class="Header__Link blank-theme"
             active-class="none"
-            exact data-aos-anchor=".anchor"
+            exact
+            data-aos-anchor=".anchor"
           >{{ $t('links.korean') }}</NuxtLink>
           <NuxtLink
             v-else
             :to="$route.fullPath.replace(/^\/[^\/]+/, '')"
-            class="Header__Link"
+            class="Header__Link blank-theme"
             active-class="none"
-            exact data-aos-anchor=".anchor"
+            exact
+            data-aos-anchor=".anchor"
           >{{ $t('links.english') }}</NuxtLink>
         </nav>
       </div>
@@ -52,6 +64,11 @@ export default {};
     url("~assets/fonts/blank Sans/Web/blank Sans Book.svg") format("svg");
   font-weight: normal;
 }
+@font-face {
+  font-family: "Black Han Sans";
+  src: url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+  font-weight: normal;
+}
 *,
 *:before,
 *:after {
@@ -65,13 +82,19 @@ body {
   color: #2e2f30;
   letter-spacing: 0.5px;
   font-size: 18px;
-  font-family: "Blank Sans", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   height: 100vh;
   margin: 0;
 }
+
+.blank-theme {
+  font-family: 'Blank Sans', sans-serif;
+}
+
 .container {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 2vw;
 }
 .container:after {
   content: "";
@@ -115,10 +138,6 @@ body {
   width: 100%;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
-.Content__Title {
-  font-weight: bold;
-  padding-bottom: 30px;
-}
+
 </style>

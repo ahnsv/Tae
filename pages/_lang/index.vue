@@ -34,6 +34,13 @@ export default {
 </script>
 
 <style scoped>
+
+.Content > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .social {
   margin: 3vh 0;
 }

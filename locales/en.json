@@ -10,7 +10,8 @@
     "introduction": "I am hugely interested in Web Technology in general. Check me out what I can do. (plz)"
   },
   "about": {
-    "title": "About",
-    "introduction": "This page is made to give you more informations."
+    "title": "About Me",
+    "introduction--title": "This page is made to give you more informations.",
+    "introduction--content": "This page is made to give you more informations."
   }
 }

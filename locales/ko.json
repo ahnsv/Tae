@@ -10,7 +10,8 @@
     "introduction": "웹 개발자를 꿈꾸는 안상태라고 합니다"
   },
   "about": {
-    "title": "안상태가 누구임?",
-    "introduction": "그러게요..."
+    "title": "About Me",
+    "introduction--title": "반갑습니다, 저는 안상태입니다.",
+    "introduction--content": "현재 공군 정보체계관리단에서 웹 풀스택 개발병으로 일하고 있으며, Web UI/UX, 함수형 프로그래밍, 그리고 단순히 상품 개발이 아니라 많은 사람들에게 새로운 가치를 만들어 나가는 개발이 즐거운, 개발자 (지망생)입니다."
   }
 }
