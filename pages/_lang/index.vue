@@ -1,6 +1,6 @@
 <template>
   <div class="Content">
-    <div class="container">
+    <div class="container" data-aos="fade" data-aos-delay="250">
       <h1 class="Content__Title">{{ $t('home.title') }}</h1>
       <p>{{ $t('home.introduction') }}</p>
       <div class="social">
@@ -16,15 +16,13 @@
 <script>
 export default {
   head() {
-    return { title: this.$t("home.title") };
+    return { title: 'AST Log' };
   },
   methods: {
     redirect: function(e) {
       switch(e.target.alt) {
         case 'github': 
           window.open('https://www.github.com/ahnsv', '_blank');
-        case 'gmail':
-          console.log('gmail')
         case 'linkedin':
           window.open('https://www.linkedin.com/in/humphrey-ahn/', '_blank')
         case 'notion':
