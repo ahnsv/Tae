@@ -66,7 +66,7 @@ export default {};
 }
 @font-face {
   font-family: "Black Han Sans";
-  src: url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+  src: url("https://fonts.googleapis.com/css?family=Black+Han+Sans:400");
   font-weight: normal;
 }
 *,
@@ -81,14 +81,14 @@ body {
   background-color: #fff;
   color: #2e2f30;
   letter-spacing: 0.5px;
-  font-size: 18px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.2em;
+  font-family: "Noto Sans KR", sans-serif;
   height: 100vh;
   margin: 0;
 }
 
 .blank-theme {
-  font-family: 'Blank Sans', sans-serif;
+  font-family: "Blank Sans", sans-serif;
 }
 
 .container {
@@ -105,6 +105,10 @@ body {
   color: #47494e;
   height: 80px;
   line-height: 80px;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 1;
 }
 .Header__Title {
   font-weight: bold;
@@ -117,7 +121,6 @@ body {
 .Header__Link {
   font-size: 16px;
   color: #47494e;
-  border: 1px solid #fff;
   padding: 7px 12px;
   text-transform: uppercase;
   text-decoration: none;
@@ -126,7 +129,6 @@ body {
 }
 .Header__Link:hover {
   color: #607d8b;
-  background-color: #fff;
 }
 .nuxt-link-active {
   color: #9c27b0;
@@ -137,6 +139,7 @@ body {
   width: 100%;
   flex-direction: row;
   justify-content: center;
+  position: absolute;
+  top: 80px;
 }
-
 </style>
