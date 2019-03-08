@@ -7,23 +7,22 @@
         <p class="Content__Intro" data-aos="fade">
           <b :style="{fontSize: '1.5em'}">{{ $t('about.introduction--title') }}</b>
         </p>
-        <p
-          class="Content__Intro"
-          data-aos="fade"
-        >{{ $t('about.introduction--content') }}</p>
+        <p class="Content__Intro" data-aos="fade">{{ $t('about.introduction--content') }}</p>
       </div>
       <div class="block philosophy">
-        <div class="philosophy--title">📜Philosophy in codes</div>
+        <div class="philosophy--title">
+          <b>📜Philosophy in codes</b>
+        </div>
         <div class="philosophy--content">
-          <div class="philosophy--pillar--1">
+          <div class="philosophy--pillar" data-aos="fade-down">
             <p class="pillar--title">Universality</p>
             <div class="pillar--1--description">{{ $t('about.philosophy--description--1') }}</div>
           </div>
-          <div class="philosophy--pillar--2">
+          <div class="philosophy--pillar" data-aos="fade-down" data-aos-delay="100">
             <p class="pillar--title">Straightforwardness</p>
             <div class="pillar--2--description">{{ $t('about.philosophy--description--2') }}</div>
           </div>
-          <div class="philosophy--pillar--3">
+          <div class="philosophy--pillar" data-aos="fade-down" data-aos-delay="200">
             <p class="pillar--title">Circumspection</p>
             <div class="pillar--3--description">{{ $t('about.philosophy--description--3') }}</div>
           </div>
@@ -164,6 +163,36 @@ p {
   margin-top: -12vh;
   -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.philosophy--content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 100px 10vw;
+  grid-gap: 5vw;
+}
+
+.philosophy--content > div {
+  align-self: center;
+}
+
+.pillar--title {
+  font-weight: bold;
+}
+
+.philosophy--pillar {
+  border-radius: 6vw;
+  padding: 3vw;
+  box-shadow: 0px 0 15px 1px #7f828b;
+}
+
+.philosophy--pillar:hover {
+  box-shadow: 0 0 20px 2px #607d8b;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 .skills {
