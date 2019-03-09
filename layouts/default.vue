@@ -85,6 +85,12 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   height: 100vh;
   margin: 0;
+  text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
+  -webkit-text-size-adjust: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
 }
 
 .blank-theme {

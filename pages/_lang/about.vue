@@ -14,72 +14,32 @@
           <b>📜Philosophy in codes</b>
         </div>
         <div class="philosophy--content">
-          <div class="philosophy--pillar" data-aos="fade-down">
-            <p class="pillar--title">Universality</p>
-            <div class="pillar--1--description">{{ $t('about.philosophy--description--1') }}</div>
-          </div>
-          <div class="philosophy--pillar" data-aos="fade-down" data-aos-delay="100">
-            <p class="pillar--title">Straightforwardness</p>
-            <div class="pillar--2--description">{{ $t('about.philosophy--description--2') }}</div>
-          </div>
-          <div class="philosophy--pillar" data-aos="fade-down" data-aos-delay="200">
-            <p class="pillar--title">Circumspection</p>
-            <div class="pillar--3--description">{{ $t('about.philosophy--description--3') }}</div>
+          <div v-for="(v, i) in [1,2,3]" :key="i" class="philosophy--pillar" data-aos="fade-down" @click="hides[i] = !hides[i]">
+            <p class="pillar--title">{{pillars[i]}}</p>
+            <div
+              :class="[`pillar--${v}--description`, !hides[i] ? hideClass : '']"
+            >{{ $t('about.philosophy--description--' + v) }}</div>
           </div>
         </div>
       </div>
       <div class="block skills" data-aos="fade">
         <div class="skills--details">
-          <div class="skill-1" data-aos="fade-right" data-aos-delay="100">
-            <div class="skills--1--number">
-              <p>#1</p>
+          <div
+            v-for="(v, i) in [1,2,3,4]"
+            class="skill-1"
+            data-aos="fade-right" data-aos-duration="700"
+            data-aos-delay="100"
+          >
+            <div :class="`skills--${v}--number`">
+              <p>#{{v}}</p>
             </div>
-            <div class="skills--1--subtitle">
+            <div :class="`skills--${v}--subtitle`">
               <b>
-                <p>{{ $t('about.skills--subtitle--1') }}</p>
+                <p>{{ $t('about.skills--subtitle--' + v) }}</p>
               </b>
             </div>
-            <div class="skills--1--description">
-              <p class="description--text">{{ $t('about.skills--description--1') }}</p>
-            </div>
-          </div>
-          <div class="skill-2" data-aos="fade-left" data-aos-delay="100">
-            <div class="skills--2--number">
-              <p>#2</p>
-            </div>
-            <div class="skills--2--subtitle">
-              <b>
-                <p>{{ $t('about.skills--subtitle--2') }}</p>
-              </b>
-            </div>
-            <div class="skills--2--description">
-              <p class="description--text">{{ $t('about.skills--description--2') }}</p>
-            </div>
-          </div>
-          <div class="skill-3" data-aos="fade-right" data-aos-delay="100">
-            <div class="skills--3--number">
-              <p>#3</p>
-            </div>
-            <div class="skills--3--subtitle">
-              <b>
-                <p>{{ $t('about.skills--subtitle--3') }}</p>
-              </b>
-            </div>
-            <div class="skills--3--description">
-              <p class="description--text">{{ $t('about.skills--description--3') }}</p>
-            </div>
-          </div>
-          <div class="skill-4" data-aos="fade-left" data-aos-delay="100">
-            <div class="skills--4--number">
-              <p>#4</p>
-            </div>
-            <div class="skills--4--subtitle">
-              <b>
-                <p>{{ $t('about.skills--subtitle--4') }}</p>
-              </b>
-            </div>
-            <div class="skills--4--description">
-              <p class="description--text">{{ $t('about.skills--description--4') }}</p>
+            <div :class="`skills--${v}--description`">
+              <p class="description--text">{{ $t('about.skills--description--' + v) }}</p>
             </div>
           </div>
         </div>
@@ -92,6 +52,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      pillars: ["Universality", "Straightforwardness", "Circumspection"],
+      hideClass: 'hide'
+    };
+  },
+  computed: {
+    hides() {
+      return [false, false, false]
+    }
+  },
   head() {
     return { title: this.$t("about.title") };
   }
@@ -187,12 +158,21 @@ p {
   border-radius: 6vw;
   padding: 3vw;
   box-shadow: 0px 0 15px 1px #7f828b;
+  min-height: 400px;
+  min-width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .philosophy--pillar:hover {
   box-shadow: 0 0 20px 2px #607d8b;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
+}
+
+.philosophy--pillar > .hide {
+  display: none;
 }
 
 .skills {
