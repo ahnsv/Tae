@@ -1,12 +1,11 @@
 <template>
   <div>
-    <header class="Header">
+    <header class="Header" :class="{dark: isDark}">
       <div class="container">
-        <h1 class="Header__Title blank-theme"><NuxtLink
-            :to="$i18n.path('')"
-            exact
-            data-aos-anchor=".anchor"
-          >AST Log</NuxtLink></h1>
+        <h1 class="Header__Title blank-theme">
+          <NuxtLink :to="$i18n.path('')" exact data-aos-anchor=".anchor">AST Log</NuxtLink>
+        </h1>
+        <div class="dark--toggle" @click="toggleDark">Dark</div>
         <nav class="Header__Menu">
           <NuxtLink
             :to="$i18n.path('')"
@@ -44,7 +43,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isDark: false
+    }
+  },
+  methods: {
+    toggleDark() {
+      this.isDark = !this.isDark
+      this.$emit('darkToggle', this.isDark);
+      console.log(this.$refs)
+    }
+  }
+};
 </script>
 
 <style>
