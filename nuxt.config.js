@@ -1,13 +1,13 @@
-// const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-//   router: {
-//     base: '/nuxt-resume/'
-//   }
-// } : {}
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/Tae/'
+  }
+} : {}
 export default {
-  // ...routerBase,
+  ...routerBase,
   loading: { color: 'cyan' },
   router: {
-    base: '/nuxt-resume/',
+    base: '/Tae/',
     middleware: 'i18n'
   },
   generate: {
