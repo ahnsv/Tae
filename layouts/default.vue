@@ -5,7 +5,6 @@
         <h1 class="Header__Title blank-theme">
           <NuxtLink :to="$i18n.path('')" exact data-aos-anchor=".anchor">AST Log</NuxtLink>
         </h1>
-        <div class="dark--toggle" @click="toggleDark">Dark</div>
         <nav class="Header__Menu">
           <NuxtLink
             :to="$i18n.path('')"
@@ -107,6 +106,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
+  word-break: keep-all;
 }
 
 body.dark {

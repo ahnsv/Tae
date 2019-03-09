@@ -1,5 +1,6 @@
 {
-  "name": "example-i18n",
+  "name": "AST_Log",
+  "author": "Sangtae Ahn",
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "nuxt": "latest",
