@@ -14,10 +14,10 @@
           <b>📜Philosophy in codes</b>
         </div>
         <div class="philosophy--content">
-          <div v-for="(v, i) in [1,2,3]" :key="i" class="philosophy--pillar" data-aos="fade-down" @click="hides[i] = !hides[i]">
+          <div v-for="(v, i) in [1,2,3]" :key="i" class="philosophy--pillar" data-aos="fade-down">
             <p class="pillar--title">{{pillars[i]}}</p>
             <div
-              :class="[`pillar--${v}--description`, !hides[i] ? hideClass : '']"
+              :class="[`pillar--${v}--description`]"
             >{{ $t('about.philosophy--description--' + v) }}</div>
           </div>
         </div>
@@ -27,7 +27,8 @@
           <div
             v-for="(v, i) in [1,2,3,4]"
             class="skill-1"
-            data-aos="fade-right" data-aos-duration="700"
+            data-aos="fade-right"
+            data-aos-duration="700"
             data-aos-delay="100"
           >
             <div :class="`skills--${v}--number`">
@@ -44,7 +45,29 @@
           </div>
         </div>
       </div>
-      <div class="block experiences"></div>
+      <div class="block experiences">
+        <div class="experiences--title">
+          <b>‍🎓Education & Experience</b>
+        </div>
+        <div class="experience" v-for="(v, i) in [1,2,3]" :key="i" data-aos="zoom-in" data-aos-duration="700">
+          <div class="experience--title">{{ $t('about.experience--title--' + v) }}</div>
+          <div class="experience--subtitle">
+            <div class="subtitle--period">{{ $t('about.experience--period--' + v) }}</div>
+            <div class="subtitle--position">{{ $t('about.experience--position--' + v) }}</div>
+          </div>
+          <div class="experience--content">
+            <ul>
+              <li>작전기상 체계 UI 리뉴얼</li>
+              <li class="indent">Weekly User 500% ~100 → ~500</li>
+              <li class="indent">HTML, CSS, JS, Material CSS, Spring MVC</li>
+              <li>공군 스페이스 챌린지 모바일 웹 앱 UI 개발</li>
+              <li class="indent">VueJS, Vuex, SASS, Vuetify, PWA</li>
+              <li>상황전파체계 개발 및 유지보수</li>
+              <li class="indent">Apache Cordova, Ionic, Angular, Typescript</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="block projects"></div>
     </div>
   </div>
@@ -54,14 +77,8 @@
 export default {
   data() {
     return {
-      pillars: ["Universality", "Straightforwardness", "Circumspection"],
-      hideClass: 'hide'
+      pillars: ["Universality", "Straightforwardness", "Circumspection"]
     };
-  },
-  computed: {
-    hides() {
-      return [false, false, false]
-    }
   },
   head() {
     return { title: this.$t("about.title") };
@@ -92,10 +109,6 @@ p {
   font-weight: bold;
   margin-bottom: 6vh;
 }
-
-/* .container > *:not(.Content__Title) {
-  padding: 0 12vw;
-} */
 
 .container {
   display: flex;
@@ -159,7 +172,6 @@ p {
   padding: 3vw;
   box-shadow: 0px 0 15px 1px #7f828b;
   min-height: 400px;
-  min-width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -202,5 +214,50 @@ p {
 
 .skills--details .description--text {
   font-size: 0.8em;
+}
+
+.experiences {
+  padding: 10vh 10vw;
+}
+
+.experiences--title {
+  margin-bottom: 50px;
+}
+
+.experience {
+  display: grid;
+  grid-template-areas: "a c" "b c";
+  box-shadow: 0 0 20px 0px #7f828b;
+  border-radius: 30px;
+  padding: 3vw;
+  margin-bottom: 50px;
+}
+
+.experience--title {
+  grid-area: a;
+  min-width: 250px;
+  font-weight: bold;
+  align-self: center;
+}
+
+.experience--subtitle {
+  grid-area: b;
+  font-size: 0.8em;
+}
+
+.experience--content {
+  grid-area: c / 2;
+  text-align: left;
+}
+
+.experience--content > ul > li {
+  display: block;
+  font-size: 0.9em;
+}
+
+.experience--content > ul > li.indent {
+  margin-left: 5vw;
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.43);
 }
 </style>

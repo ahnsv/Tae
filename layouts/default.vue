@@ -2,7 +2,11 @@
   <div>
     <header class="Header">
       <div class="container">
-        <h1 class="Header__Title blank-theme">AST Log</h1>
+        <h1 class="Header__Title blank-theme"><NuxtLink
+            :to="$i18n.path('')"
+            exact
+            data-aos-anchor=".anchor"
+          >AST Log</NuxtLink></h1>
         <nav class="Header__Menu">
           <NuxtLink
             :to="$i18n.path('')"
@@ -93,6 +97,16 @@ body {
   text-rendering: optimizelegibility;
 }
 
+body.dark {
+  --bg: #282c35;
+  --textcolor: whitesmoke;
+}
+
+.dark {
+  background-color: var(--bg) !important;
+  color: var(--textcolor) !important;
+}
+
 .blank-theme {
   font-family: "Blank Sans", sans-serif;
 }
@@ -120,6 +134,11 @@ body {
   font-weight: bold;
   float: left;
   font-size: 30px;
+}
+
+.Header__Title > a {
+  text-decoration: none;
+  color: black;
 }
 .Header__Menu {
   float: right;
