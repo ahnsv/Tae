@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     toggleDark(e) {
-      e.preventDefault()
+      e.preventDefault();
       this.isDark = !this.isDark;
       this.$emit("darkToggle", this.isDark);
       console.log(this.$refs);
@@ -155,5 +155,31 @@ body {
   justify-content: center;
   position: absolute;
   top: 80px;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  body {
+    font-size: 0.8em;
+  }
+  .Content__Title {
+    margin-top: -60px;
+    padding: 0px 100px;
+  }
+  .title {
+    font-size: 1.5em;
+  }  
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  body {
+    font-size: 0.8em;
+  }
+  .Content__Title {
+    margin-top: -60px;
+    padding: 0px 100px;
+  }
+  .title {
+    font-size: 1.5em;
+  }
 }
 </style>
