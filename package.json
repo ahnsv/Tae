@@ -14,7 +14,7 @@
     "post-update": "npm upgrade --latest",
     "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
     "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
-    "push": "git subtree push --prefix dist origin gh-pages"
+    "push": "git push --delete origin gh-pages && git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
