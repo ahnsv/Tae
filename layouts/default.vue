@@ -6,6 +6,7 @@
           <NuxtLink :to="$i18n.path('')" exact data-aos-anchor=".anchor">AST Log</NuxtLink>
         </h1>
         <nav class="Header__Menu">
+          <a @click="toggleDark" class="Header__Link">Dark</a>
           <NuxtLink
             :to="$i18n.path('')"
             class="Header__Link blank-theme"
@@ -46,44 +47,20 @@ export default {
   data() {
     return {
       isDark: false
-    }
+    };
   },
   methods: {
-    toggleDark() {
-      this.isDark = !this.isDark
-      this.$emit('darkToggle', this.isDark);
-      console.log(this.$refs)
+    toggleDark(e) {
+      e.preventDefault()
+      this.isDark = !this.isDark;
+      this.$emit("darkToggle", this.isDark);
+      console.log(this.$refs);
     }
   }
 };
 </script>
 
 <style>
-@font-face {
-  font-family: "Blanks Sans";
-  src: url("~assets/fonts/blank Sans/Web/blank Sans Bold.woff") format("woff");
-  src: local("BlankSansBold"),
-    url("~assets/fonts/blank Sans/Web/blank Sans Bold.eot") format("eot"),
-    url("~assets/fonts/blank Sans/TTF/blank Sans Bold.ttf") format("ttf"),
-    url("~assets/fonts/blank Sans/OTF/blank Sans OTF Bold.otf") format("otf"),
-    url("~assets/fonts/blank Sans/Web/blank Sans Bold.svg") format("svg");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "Blank Sans";
-  src: url("~assets/fonts/blank Sans/Web/blank Sans Book.woff") format("woff");
-  src: local("BlankSansBook"),
-    url("~assets/fonts/blank Sans/Web/blank Sans Book.eot") format("eot"),
-    url("~assets/fonts/blank Sans/TTF/blank Sans Book.ttf") format("ttf"),
-    url("~assets/fonts/blank Sans/OTF/blank Sans OTF Book.otf") format("otf"),
-    url("~assets/fonts/blank Sans/Web/blank Sans Book.svg") format("svg");
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Black Han Sans";
-  src: url("https://fonts.googleapis.com/css?family=Black+Han+Sans:400");
-  font-weight: normal;
-}
 *,
 *:before,
 *:after {
@@ -109,7 +86,7 @@ body {
   word-break: keep-all;
 }
 
-body.dark {
+#__layout.dark {
   --bg: #282c35;
   --textcolor: whitesmoke;
 }

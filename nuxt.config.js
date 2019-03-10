@@ -14,15 +14,14 @@ export default {
     routes: ['/', '/about', '/ko', '/ko/about']
   },
   css: [
-    'aos/dist/aos.css'
-  ],
+    'aos/dist/aos.css'],
   head: {
     link: [
-      {rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Noto+Sans+KR"}
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Noto+Sans+KR:500,700,900&amp;subset=korean" }
     ]
   },
   plugins: [
     { src: "~/plugins/aos", ssr: false },
-    { src: '~/plugins/i18n.js'}
+    { src: '~/plugins/i18n.js' }
   ]
 }
