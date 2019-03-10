@@ -728,7 +728,7 @@
         >
           <div class="experience--thumbnail">
             <img
-              src="https://yt3.ggpht.com/a-/AAuE7mAo52TS0m73vvCL6n7GmHMs9dltAj8aA4DP_g=s900-mo-c-c0xffffffff-rj-k-no"
+              v-lazy="imgUrls[0]" :data-loading="imgUrls[0].placeholder"
               alt
             >
           </div>
@@ -760,7 +760,7 @@
         >
           <div class="experience--thumbnail">
             <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Boston_College_seal.svg/1200px-Boston_College_seal.svg.png"
+              v-lazy="imgUrls[1]"
               alt
             >
           </div>
@@ -798,7 +798,8 @@
 export default {
   data() {
     return {
-      pillars: ["Universality", "Straightforwardness", "Circumspection"]
+      pillars: ["Universality", "Straightforwardness", "Circumspection"],
+      imgUrls: ["https://yt3.ggpht.com/a-/AAuE7mAo52TS0m73vvCL6n7GmHMs9dltAj8aA4DP_g=s900-mo-c-c0xffffffff-rj-k-no", "https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Boston_College_seal.svg/1200px-Boston_College_seal.svg.png"]
     };
   },
   head() {

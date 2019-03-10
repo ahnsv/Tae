@@ -22,6 +22,7 @@ export default {
   },
   plugins: [
     { src: "~/plugins/aos", ssr: false },
+    { src: '~/plugins/vue-lazyload', ssr: false },
     { src: '~/plugins/i18n.js' }
   ]
 }
