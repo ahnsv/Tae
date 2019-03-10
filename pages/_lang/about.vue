@@ -5,7 +5,7 @@
       <h1 class="Content__Title" data-aos="fade-down">{{ $t('about.title') }}</h1>
       <div class="block" id="content-intro" data-aos="fade" data-aos-delay="500">
         <p class="Content__Intro" data-aos="fade">
-          <b :style="{fontSize: '1.5em'}">{{ $t('about.introduction--title') }}</b>
+          <b class="title">{{ $t('about.introduction--title') }}</b>
         </p>
         <p class="Content__Intro" data-aos="fade">{{ $t('about.introduction--content') }}</p>
         <div class="stack">
@@ -682,7 +682,7 @@
         </div>
       </div>
       <div class="block philosophy">
-        <div class="philosophy--title">
+        <div class="title philosophy--title">
           <b>📜 Philosophy in codes</b>
         </div>
         <div class="philosophy--content">
@@ -718,13 +718,11 @@
         </div>
       </div>
       <div class="block experiences">
-        <div class="experiences--title">
+        <div class="title experiences--title">
           <b>‍🎓 Education & Experience</b>
         </div>
         <div
           class="experience"
-          v-for="(v, i) in [1,2]"
-          :key="i"
           data-aos="zoom-out"
           data-aos-duration="700"
         >
@@ -734,10 +732,12 @@
               alt
             >
           </div>
-          <div class="experience--title">{{ $t('about.experience--title--' + v) }}</div>
-          <div class="experience--subtitle">
-            <div class="subtitle--period">{{ $t('about.experience--period--' + v) }}</div>
-            <div class="subtitle--position">{{ $t('about.experience--position--' + v) }}</div>
+          <div class="experience--titles">
+            <div class="experience--title">공군 정보체계관리단</div>
+            <div class="experience--subtitle">
+              <div class="subtitle--period">2019.10 ~ now</div>
+              <div class="subtitle--position">프로그램작성병</div>
+            </div>
           </div>
           <div class="experience--content">
             <ul>
@@ -753,8 +753,43 @@
             </ul>
           </div>
         </div>
+        <div
+          class="experience"
+          data-aos="zoom-out"
+          data-aos-duration="700"
+        >
+          <div class="experience--thumbnail">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Boston_College_seal.svg/1200px-Boston_College_seal.svg.png"
+              alt
+            >
+          </div>
+          <div class="experience--titles">
+            <div class="experience--title">Boston College</div>
+            <div class="experience--subtitle">
+              <div class="subtitle--period">2015.08 ~ 2017.05(군 휴학)</div>
+              <div class="subtitle--position">Computer Sceince (B.A.), Honors @ Applied Psychology and Human Development (B.A.)</div>
+            </div>
+          </div>
+          <div class="experience--content">
+            <ul>
+              <li>Web App Develeopment</li>
+              <li class="indent">HTML, CSS, JS, React</li>
+              <li>Randomness & Computation</li>
+              <li class="indent">Python scipy, numpy</li>
+              <li>Database Management</li>
+              <li class="indent">Oracle DB</li>
+              <li>Computer Systems</li>
+              <li class="indent">C, Linux</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="block projects"></div>
+      <div class="block projects">
+        <div class="title">
+          <b>‍🎓 Projects</b>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -817,6 +852,10 @@ p {
 
 .block {
   min-height: 90vh;
+}
+
+.title {
+  font-size: 2em;
 }
 
 .stack {
@@ -956,21 +995,25 @@ p {
   width: 100px;
 }
 
-.experience--title {
+.experience--titles {
   grid-area: b;
+}
+
+.experience--title {
   min-width: 250px;
   font-weight: bold;
   align-self: center;
 }
 
 .experience--subtitle {
-  grid-area: b;
-  font-size: 0.8em;
+  font-size: 75%;
+  text-align: center;
 }
 
 .experience--content {
   grid-area: c / 2;
   text-align: left;
+  justify-self: center;
 }
 
 .experience--content > ul > li {
