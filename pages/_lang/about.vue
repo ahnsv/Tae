@@ -853,10 +853,12 @@ p {
 
 .block {
   min-height: 90vh;
+  padding: 5vh;
 }
 
 .title {
   font-size: 2em;
+  margin: 10vh 0;
 }
 
 .stack {
@@ -895,7 +897,6 @@ p {
 
 .philosophy {
   background: whitesmoke;
-  margin-top: -12vh;
   -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
   display: flex;
@@ -1020,6 +1021,7 @@ p {
 .experience--content > ul > li {
   display: block;
   font-size: 0.9em;
+  min-width: 35vw;
 }
 
 .experience--content > ul > li.indent {
