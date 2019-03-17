@@ -121,11 +121,6 @@
           </div>
         </div>
       </div>
-      <div class="block projects">
-        <div class="title">
-          <b>‍🎓 Projects</b>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -229,7 +224,6 @@ p {
 .philosophy--content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 100px 10vw;
   grid-gap: 5vw;
 }
 
