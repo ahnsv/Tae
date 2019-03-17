@@ -32,5 +32,10 @@ export default {
     { src: "~/plugins/aos", ssr: false },
     { src: '~/plugins/vue-lazyload', ssr: false },
     { src: '~/plugins/i18n.js' }
+  ],
+  modules: [
+    ['nuxt-sass-resources-loader', [
+      '@/assets/css/_fonts.scss'
+  ]],
   ]
 }
